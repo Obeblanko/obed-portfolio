@@ -80,14 +80,24 @@ export const projects = [
     image: '',
   },
   {
-    title: 'Agroguard Ghana',
-    icon: 'shield',
-    problem: 'An AI-powered maize disease detection project that helps farmers identify crop disease and act early.',
-    role: 'Team lead, tester and member of the model development team',
-    tech: [],
-    live: '',
-    github: '',
-    image: '',
+     title: 'AgroGuard Ghana',
+  icon: 'shield',
+  problem: 'An AI-powered maize disease detection and regional surveillance platform that helps Ghanaian farmers identify maize diseases early and supports agricultural disease monitoring.',
+  role: 'Team Lead, Documentation, Model Training and Testing',
+  tech: [
+    'Python',
+    'TensorFlow',
+    'Keras',
+    'MobileNetV2',
+    'Deep Learning',
+    'HTML5',
+    'CSS3',
+    'JavaScript',
+    'SQLite'
+  ],
+  live: '',
+  github: 'https://github.com/Obeblanko/AgroGuard-Ghana-AI-Maize-Disease-Detection-System',
+  image: '',
   },
 ]
 
