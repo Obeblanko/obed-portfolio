@@ -4,22 +4,24 @@
 
 /* ---------- Colour tokens (R G B) ---------- */
 :root {
-  --bg: 246 249 249;
-  --surface: 255 255 255;
-  --ink: 14 30 34;
-  --muted: 88 106 110;
-  --line: 218 227 228;
-  --accent: 11 110 110;      /* deep teal, the one accent colour */
+  --bg: 249 247 241;
+  --surface: 255 255 252;
+  --ink: 27 42 36;
+  --muted: 91 108 98;
+  --line: 222 225 214;
+  --accent: 25 91 72;
+  --highlight: 218 123 75;
   --onaccent: 255 255 255;
 }
 .dark {
-  --bg: 8 19 22;
-  --surface: 14 30 34;
-  --ink: 232 240 240;
-  --muted: 146 164 168;
-  --line: 29 51 56;
-  --accent: 62 196 181;
-  --onaccent: 6 24 26;
+  --bg: 15 27 24;
+  --surface: 23 39 34;
+  --ink: 238 239 226;
+  --muted: 166 180 167;
+  --line: 47 66 57;
+  --accent: 117 193 147;
+  --highlight: 232 150 102;
+  --onaccent: 15 35 26;
 }
 
 html {
@@ -28,6 +30,9 @@ html {
 }
 body {
   @apply bg-bg text-ink font-sans antialiased;
+  background-image:
+    radial-gradient(ellipse at 92% 8%, rgb(var(--highlight) / 0.08), transparent 28rem),
+    radial-gradient(ellipse at 4% 42%, rgb(var(--accent) / 0.045), transparent 32rem);
 }
 :focus-visible {
   outline: 2px solid rgb(var(--accent));
@@ -41,27 +46,63 @@ body {
 /* ---------- Reusable pieces ---------- */
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-medium transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200;
   }
   .btn-primary {
-    @apply bg-accent text-onaccent hover:bg-accent/90;
+    @apply bg-accent text-onaccent shadow-lg shadow-accent/15 hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-xl;
   }
   .btn-secondary {
-    @apply border border-line bg-surface text-ink hover:border-accent hover:text-accent;
+    @apply border border-line bg-surface/80 text-ink hover:-translate-y-0.5 hover:border-accent hover:text-accent;
   }
   .chip {
     @apply inline-flex items-center rounded-full border border-line bg-bg px-3 py-1 text-xs font-medium text-muted;
   }
 }
 
-/* Faint grid behind the hero */
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-ink/5;
+}
+
+/* Soft grid texture behind the hero. */
 .grid-bg {
   background-image:
-    linear-gradient(rgb(var(--line) / 0.7) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(var(--line) / 0.7) 1px, transparent 1px);
-  background-size: 56px 56px;
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 75% 30%, #000 0%, transparent 75%);
-  mask-image: radial-gradient(ellipse 70% 60% at 75% 30%, #000 0%, transparent 75%);
+    linear-gradient(rgb(var(--line) / 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--line) / 0.55) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 76% 32%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(ellipse 75% 65% at 76% 32%, #000 0%, transparent 78%);
+}
+
+.hero-portrait {
+  background:
+    radial-gradient(circle at 100% 0%, rgb(var(--highlight) / 0.2), transparent 45%),
+    rgb(var(--accent) / 0.1);
+}
+
+.project-art {
+  background: linear-gradient(135deg, rgb(var(--accent) / 0.13), rgb(var(--highlight) / 0.18));
+}
+.project-art::before {
+  position: absolute;
+  width: 11rem;
+  height: 11rem;
+  border: 1px solid rgb(var(--accent) / 0.2);
+  border-radius: 9999px;
+  content: '';
+  transform: translate(3rem, 1.5rem);
+}
+.project-art::after {
+  position: absolute;
+  right: 1.5rem;
+  bottom: -3rem;
+  width: 9rem;
+  height: 9rem;
+  border: 1px solid rgb(var(--highlight) / 0.3);
+  border-radius: 9999px;
+  content: '';
+}
+.project-card:nth-child(even) .project-art {
+  background: linear-gradient(135deg, rgb(var(--highlight) / 0.18), rgb(var(--accent) / 0.12));
 }
 
 /* ---------- The one orchestrated page-load moment (hero only) ---------- */

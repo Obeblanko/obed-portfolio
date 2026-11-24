@@ -16,6 +16,7 @@ export default {
         muted: 'rgb(var(--muted) / <alpha-value>)',
         line: 'rgb(var(--line) / <alpha-value>)',
         accent: 'rgb(var(--accent) / <alpha-value>)',
+        highlight: 'rgb(var(--highlight) / <alpha-value>)',
         onaccent: 'rgb(var(--onaccent) / <alpha-value>)',
       },
     },

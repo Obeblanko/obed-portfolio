@@ -7,7 +7,7 @@ export default function Education() {
     <Section id="education" title="Education and certifications" intro="Formal study and professional training.">
       <div className="space-y-4">
         {education.map((e) => (
-          <div key={e.title + e.org} className="flex items-start gap-4 rounded-xl border border-line bg-surface p-5">
+          <div key={e.title + e.org} className="card-hover flex items-start gap-4 rounded-xl border border-line bg-surface/90 p-5">
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
               <GraduationCap size={22} />
             </span>
@@ -23,7 +23,7 @@ export default function Education() {
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         {certifications.map((c) => (
-          <div key={c.title} className="flex items-start gap-4 rounded-xl border border-line bg-surface p-5">
+          <div key={c.title} className="card-hover flex items-start gap-4 rounded-xl border border-line bg-surface/90 p-5">
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
               <Award size={22} />
             </span>

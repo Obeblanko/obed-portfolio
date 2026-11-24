@@ -7,7 +7,9 @@ export default function Hub() {
   return (
     <section id="hub" className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-accent px-7 py-14 text-onaccent sm:px-12 md:py-16">
+        <div className="relative overflow-hidden rounded-3xl border border-highlight/20 bg-accent px-7 py-14 text-onaccent shadow-2xl shadow-accent/15 sm:px-12 md:py-16">
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-highlight/20" aria-hidden="true" />
+          <div className="absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-highlight/15 blur-3xl" aria-hidden="true" />
           <div
             className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-onaccent/20"
             aria-hidden="true"

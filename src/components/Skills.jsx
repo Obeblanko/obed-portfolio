@@ -11,7 +11,7 @@ export default function Skills() {
         {skills.map((g) => {
           const Icon = icons[g.icon] || Wrench
           return (
-            <div key={g.group} className="rounded-xl border border-line bg-surface p-6">
+            <div key={g.group} className="card-hover rounded-xl border border-line bg-surface/90 p-6">
               <div className="flex items-center gap-3">
                 <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent/10 text-accent">
                   <Icon size={20} />

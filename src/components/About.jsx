@@ -17,7 +17,7 @@ export default function About() {
         {about.strengths.map((s) => {
           const Icon = icons[s.icon] || Briefcase
           return (
-            <div key={s.title} className="rounded-xl border border-line bg-surface p-5">
+            <div key={s.title} className="card-hover rounded-xl border border-line bg-surface/90 p-5">
               <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent/10 text-accent">
                 <Icon size={20} />
               </span>
